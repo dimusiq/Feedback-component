@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
-import Card from '../card/card.component'
-import CustomButton from '../custom-button/custom-button.component'
+import React, { useState } from 'react';
+import Card from '../card/card.component';
+import CustomButton from '../custom-button/custom-button.component';
+import RatingSelect from '../rating-selector/rating-selector.component';
+
 
 function FeedbackForm() {
   const [text, setText] = useState('')
+  const [rating, setRating] = useState('')
   const [btnDisabled, setBtnDisabled] = useState(true)
   const [message, setMessage] = useState('')
 
@@ -25,7 +28,7 @@ function FeedbackForm() {
     <Card>
       <form>
         <h2>How would you rate your service with us?</h2>
-        {/* @todo - rating select component*/}
+        <RatingSelect  select={(rating)=> setRating(rating)}/>
         <div className='input-group'>
             <input
               onChange={handleTextChange}
