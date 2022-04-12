@@ -2,6 +2,8 @@
   "name": "feedback-app-project",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5000",
+  "secure": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.4",
@@ -14,7 +16,6 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
     "styled-components": "^5.3.5",
-    "uuid": "^8.3.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -22,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server --watch db.json --port 5000",
+    "server": "json-server --watch db.json --port 5000 --ignore client",
     "dev": "concurrently \"npm run server\" \"npm start\""
   },
   "eslintConfig": {
